@@ -173,7 +173,7 @@
             </div>
 
             <!-- Div 2: Animal Helplines & Nearby Vets -->
-            <div id="helplines" class="content-card p-8">
+            <div id="helplines" class="content-card p-8 lg:col-span-2">
                 <h2 class="text-3xl font-semibold text-theme-golden mb-6">Helplines & Clinics</h2>
                 <ul class="space-y-4 list-disc list-inside text-lg">
                     <!-- Template Item 1 -->
@@ -195,26 +195,14 @@
                 </ul>
             </div>
 
-            <!-- Div 3: Veterinarian Contacts -->
-            <div class="content-card p-8">
-                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Our Vets</h2>
-                <div class="space-y-5">
-                    <!-- Template Item 1 -->
-                    <div class="border-b border-theme-golden/30 pb-4">
-                        <h3 class="text-2xl font-semibold text-theme-golden">[Dr. Vet's Name]</h3>
-                        <p class="text-lg"><strong>Specialty:</strong> [e.g., Feline Specialist, General]</p>
-                        <p class="text-lg"><strong>Contact:</strong> <a href="tel:999-999-9999">[Phone Number]</a></p>
-                        <p class="text-md mt-1"><strong>Notes:</strong> [e.g., Available 24/7, House calls, etc.]</p>
-                    </div>
-                    <!-- Template Item 2 -->
-                    <div class="border-b border-theme-golden/30 pb-4">
-                        <h3 class="text-2xl font-semibold text-theme-golden">[Another Vet's Name]</h3>
-                        <p class="text-lg"><strong>Specialty:</strong> [e.g., Surgery]</p>
-                        <p class="text-lg"><strong>Contact:</strong> <a href="tel:888-888-8888">[Phone Number]</a></p>
-                        <p class="text-md mt-1"><strong>Notes:</strong> [e.g., Works at [Clinic Name]]</p>
-                    </div>
+            <!-- Div 4: Our Vets (Dynamic) -->
+            <section id="vets" class="content-card p-8 lg:col-span-2">
+                <h2 class="text-4xl font-heading font-semibold text-theme-golden mb-6">Our Vets</h2>
+                <!-- This div will be populated by JavaScript -->
+                <div id="vets-list" class="space-y-10">
+                    <p class="text-lg text-theme-dark-text/80">Loading veterinarian list...</p>
                 </div>
-            </div>
+            </section>
 
             <!-- NEW Div: Common Misconceptions -->
             <div id="learn" class="content-card p-8 lg:col-span-2">
@@ -306,6 +294,66 @@
             <p>&copy; 2025 IIT Meowdras. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript to load Vets from JSON -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const vetsListContainer = document.getElementById('vets-list');
+            
+            if (vetsListContainer) {
+                // This script will try to fetch the 'vets.json' file from the same folder as the index.html
+                fetch('vets.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        vetsListContainer.innerHTML = ''; // Clear the "Loading..." text
+                        
+                        data.specialties.forEach(specialty => {
+                            // Create specialty heading
+                            const specialtyHeading = document.createElement('h3');
+                            specialtyHeading.className = 'text-3xl font-heading font-semibold text-theme-dark-text border-b border-theme-golden/30 pb-3 mb-6';
+                            specialtyHeading.textContent = specialty.name;
+                            vetsListContainer.appendChild(specialtyHeading);
+                            
+                            // Create a grid for the doctors in this specialty
+                            const doctorsGrid = document.createElement('div');
+                            doctorsGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
+                            
+                            specialty.doctors.forEach(doctor => {
+                                // Create doctor card
+                                const doctorCard = document.createElement('div');
+                                doctorCard.className = 'bg-theme-beige/50 p-6 rounded-lg border border-theme-golden/30';
+                                
+                                let cardHTML = `<h4 class="text-2xl font-heading font-semibold text-theme-golden mb-2">${doctor.name}</h4>`;
+                                
+                                if (doctor.clinic) {
+                                    cardHTML += `<p class="text-lg font-semibold text-theme-dark-text/90">${doctor.clinic}</p>`;
+                                }
+                                if (doctor.address) {
+                                    cardHTML += `<p class="text-md text-theme-dark-text/80 mt-2">${doctor.address}</p>`;
+                                }
+                                if (doctor.phone) {
+                                    cardHTML += `<a href="tel:${doctor.phone}" class="inline-block mt-3 text-lg font-semibold text-theme-golden-hover hover:underline">${doctor.phone}</a>`;
+                                }
+                                
+                                doctorCard.innerHTML = cardHTML;
+                                doctorsGrid.appendChild(doctorCard);
+                            });
+                            
+                            vetsListContainer.appendChild(doctorsGrid);
+                        });
+                    })
+                    .catch(error => {
+                        vetsListContainer.innerHTML = '<p class="text-lg text-red-600">Error: Could not load the veterinarian list. Please try again later.</p>';
+                        console.error('Error fetching vet data:', error);
+                    });
+            }
+        });
+    </script>
 
 </body>
 </html>
