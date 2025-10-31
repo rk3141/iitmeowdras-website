@@ -1,0 +1,201 @@
+{
+  "specialties": [
+    {
+      "name": "Veterinary Clinical Medicine",
+      "doctors": [
+        {
+          "name": "Dr. Arun.V",
+          "clinic": "SKS Veterinary Hospital",
+          "address": "Shop No.198A, Dev Apartments (Basement), St Marys Road, Trustpakkam, Abiramapuram, Chennai- 600018.",
+          "phone": "044 4210 8159"
+        },
+        {
+          "name": "Dr. A.Gopalakrishnan",
+          "clinic": "Wonder Care Pet Clinic",
+          "address": "5/477, Dr. Ambedkar Rd., Karunai Sekaran Nagar, Nanmangalam, Vellakkal, Chennai - 600129.",
+          "phone": "82659 24316"
+        },
+        {
+          "name": "Dr. S Prathaban",
+          "clinic": "Sanchu Animal Hospital",
+          "address": "4, Adyar Bridge Rd, opposite Fortis Malar Hospital, Gandhi Nagar, Adyar, Chennai -600020.",
+          "phone": "94451 60101"
+        },
+        {
+          "name": "Dr. Areshkumar.M",
+          "clinic": "AK Pet Clinic",
+          "address": "39, TM Maistry St, Bryant Nagar, Vannanthurai, Besant Nagar, Chennai - 600041.",
+          "phone": "91715 72429"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Cardiology",
+      "doctors": [
+        {
+          "name": "Dr. K.Jeyaraja",
+          "clinic": "SKS Veterinary Hospitals",
+          "address": "Shop No.198A, Dev Apartments (Basement), St Marys Road, Trustpakkam, Abiramapuram, Chennai -600018.",
+          "phone": "044 4210 8159"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Neurology",
+      "doctors": [
+        {
+          "name": "Dr. M.Ranjithkumar",
+          "clinic": "Ambattur Pet Clinic",
+          "address": "No. 32, Mounasamy Madam St, Venkatapuram, Vijayalakshmi Puram, Ambattur OT, Chennai - 600053.",
+          "phone": "96004 00302"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Surgery and Radiology",
+      "doctors": [
+        {
+          "name": "Dr M.G.Mohammad Ali",
+          "clinic": "Pasteurs Pets Clinic",
+          "address": "70/1/110, Greensway Roads, Opposite Malligai, R A Puram, Chennai 600028.",
+          "phone": "044 2493 5342"
+        },
+        {
+          "name": "Dr.Mohammad Shafi",
+          "clinic": "Sterling Pet Clinic",
+          "address": "KAVERI COMPLEX Shop No 41/42 #96, Landmark Near Just Born, Near Old Ganpath Hotel, Uthamar Gandhi Road, Nungakkam, Chennai - 600034.",
+          "phone": "94441 91634"
+        },
+        {
+          "name": "Dr.M.Gokulakrishanan",
+          "clinic": "Bow and Meow Pet Clinic",
+          "address": "Kotturpuram, Chennai - 600085.",
+          "phone": "98401 95986"
+        },
+        {
+          "name": "Dr. R.Shivashankar",
+          "clinic": "Raksha Pet Clinic",
+          "address": "14 A B Block Kizhakku , Ashtoria Apartments. Pudhuvai Nagar , Lakshmi Nagar, Chrompet, (Near 200 feet Road Bridge), Chennai - 600044.",
+          "phone": null
+        },
+        {
+          "name": "Dr. SM Aravind Kumar",
+          "clinic": "The Ark Veterinary Clinic",
+          "address": "9, Jaganathan Road, Ponnangipuram, Tirumurthy Nagar, Nungambakkam, Chennai - 600034",
+          "phone": "95000 28643"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Orthopaedics",
+      "doctors": [
+        {
+          "name": "Dr S.Ayyappan",
+          "clinic": "Dr.Ayyapans's Pet Clinic",
+          "address": "No.4 / 10, N St, Kilpauk Garden Colony, Kilpauk, Chennai - 600010.",
+          "phone": "98412 49129"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Dermatology",
+      "doctors": [
+        {
+          "name": "Dr B.Nagarajan",
+          "clinic": "Ballo Multi-speciality Pet Clinic",
+          "address": "New No. 26, Old No. 20, CIT Colony, 2nd Main Road, Mylapore, (Near Chettiar Hall, Beside Studio For Dance ) Chennai - 600004.",
+          "phone": "98400 33444"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Opthalmology",
+      "doctors": [
+        {
+          "name": "Dr C.Niranjana",
+          "clinic": "Ophthalmology Ward, Dept of Veterinary Surgery and Radiology, Madras Veterinary College",
+          "address": "Vepery, Chennai - 600007.",
+          "phone": "98842 56715"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Gynaecology and Obstetrics",
+      "doctors": [
+        {
+          "name": "Dr P. Sridevi",
+          "clinic": "Canine Fertility Clinic",
+          "address": "68, 4th Street, Secretariat Colony, Secretariat Nagar, Retteri, Kolathur, Chennai -600099.",
+          "phone": "98842 65177"
+        },
+        {
+          "name": "Dr. R. Suresh Kumar",
+          "clinic": "Tender Care Pet Clinic",
+          "address": "Old No.186, Konnur High Road, Ayanavaram, Chennai -600023.",
+          "phone": "98655 71992"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Gastroenterology",
+      "doctors": [
+        {
+          "name": "Dr D. Sumathi",
+          "clinic": "Paws and Claws Pet Clinic",
+          "address": "No.6, 9th South Cross St, Sri Kapaleeswarar Nagar, Neelankarai, Chennai - 600115.",
+          "phone": "96000 26684"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Nephrology",
+      "doctors": [
+        {
+          "name": "Dr M. Chandrasekhar",
+          "clinic": "East Coast Pet Clinic",
+          "address": "375, MGR Salai, Krishna Nagar, Palavakkam, Chennai - 600041.",
+          "phone": "98401 07696"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Blood Transfusion",
+      "doctors": [
+        {
+          "name": "Dr. G.R.Bharanidharan",
+          "clinic": "Ark Veterinary Clinic",
+          "address": "No. 5/2, 3rd Cross St, Radhakrishnan Nagar, Thiruvanmiyur, Chennai - 600041",
+          "phone": "98418 11445"
+        }
+      ]
+    },
+    {
+      "name": "Veterinary Emergency and Critical Care",
+      "doctors": [
+        {
+          "name": "Dr. G Vijayakumar",
+          "clinic": "Department of Clinics, Madras Veterinary College",
+          "address": "Vepery, Chennai - 600007",
+          "phone": "82200 91580"
+        },
+        {
+          "name": "Dr. Hamsayamini.S",
+          "clinic": "SKS Veterinary Hospitals",
+          "address": "Shop No.198A, Dev Apartments (Basement), St Marys Road, Trustpakkam, Abiramapuram, Chennai -600018.",
+          "phone": "044 4210 8159"
+        }
+      ]
+    },
+    {
+      "name": "Feline (Cat) Consultant",
+      "doctors": [
+        {
+          "name": "Dr. Afzal H Mohamed",
+          "clinic": "Doctor Cat Feline Speciality Clinic",
+          "address": "No.L5, 2nd West Street, Kamaraj Nagar, Thiruvanmiyur, Chennai 600041.",
+          "phone": "044 2442 5472"
+        }
+      ]
+    }
+  ]
+}
