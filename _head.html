@@ -1,0 +1,98 @@
+<!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Load Google Fonts: Poppins for headings, Inter for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Base font style -->
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        /* Replaced Jute texture with a subtle gradient */
+        background: linear-gradient(170deg, #FFFBEB, #FDF5E6);
+        background-attachment: fixed; /* Makes gradient cover the whole page */
+    }
+
+    /* Set Poppins for all headings */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Style for all links */
+    a {
+        font-weight: 600; /* semibold */
+        color: #B8860B; /* theme-golden-hover */
+        transition: all 0.2s ease-in-out;
+    }
+    a:hover {
+        color: #fca311; /* theme-golden */
+        text-decoration: none; /* Modern sites often remove underline on hover */
+    }
+    
+    /* Modern Card styles */
+    .content-card {
+        /* background-color: #ffffff; */ /* Replaced with subtle gradient */
+        background-image: linear-gradient(to bottom, #ffffff, #f9fafb); /* white to gray-50 */
+        border-radius: 1rem; /* .rounded-2xl */
+        border-top: 4px solid #fca311; /* Golden top border */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .content-card:hover {
+        transform: translateY(-5px); /* Subtle lift effect */
+        box-shadow: 0 10px 20px rgba(252, 163, 17, 0.2); /* Soft golden glow */
+    }
+    
+    /* Gallery Image Hover */
+    .gallery-img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .gallery-img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.05);
+    }
+
+    /* Style for new Nav Links */
+    .nav-link {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1rem; /* text-base */
+        color: #422D0B; /* theme-dark-text */
+        padding-bottom: 4px;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+        color: #fca311; /* theme-golden */
+        border-bottom-color: #fca311;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+</style>
+
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    heading: ['Poppins', 'sans-serif'],
+                },
+                colors: {
+                    'theme-beige': '#FFFBEB',    /* Main background fallback */
+                    'theme-card-bg': '#FDF5E6', /* Header/Footer background */
+                    'theme-dark-text': '#422D0B',/* Dark brown text */
+                    'theme-golden': '#fca311',   /* Golden ginger yellow */
+                    'theme-golden-hover': '#E69500', /* Darker ginger hover */
+                },
+            },
+        },
+    }
+</script>
