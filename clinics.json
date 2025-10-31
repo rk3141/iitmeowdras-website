@@ -1,0 +1,46 @@
+{
+  "clinics": [
+    {
+      "name": "Besant Memorial Animal Dispensary (BMAD)",
+      "distance": "Main Gate: 3.2 kms",
+      "contacts": ["+919445070909"],
+      "address": "Sai Ram Colony, Besant Nagar, Chennai, Tamil Nadu 600090",
+      "hours": "9:30 am - 12 pm, 2:30 pm - 4 pm (Mon-Sat). Sun Closed"
+    },
+    {
+      "name": "JAWZ Rescue and Rehab",
+      "distance": "Main Gate: 3.6 kms",
+      "contacts": ["+919176047608"],
+      "address": "No 7, 2nd St, near Gate 03 Pentecost church, Venkateswara Nagar, Adyar, Chennai, Tamil Nadu 600020",
+      "hours": "Mon-Fri (10 am - 5 pm), Sat (10 am - 12:30 pm), Sun (10 am - 1 pm)"
+    },
+    {
+      "name": "Paws and Claws, ECR",
+      "distance": "Main Gate: 11 kms",
+      "contacts": ["+919600026684"],
+      "address": "Thomas Research, 2/164, SH 49, Cholamandal Artists Village, Injambakkam, Chennai, Tamil Nadu 600115",
+      "hours": "10 am - 6 pm (Mon-Sat), 10 am - 2 pm (Tue). Sun Closed"
+    },
+    {
+      "name": "Voice of Animals Trust, Porur",
+      "distance": "Main Gate: 11 kms",
+      "contacts": ["+916383243594"],
+      "address": "120-A, Second Cross Street, Lakshmi Nagar Extension, Porur. 600116",
+      "hours": "11 am - 9 pm (Mon-Sat), Sun (11 am - 1 pm)"
+    },
+    {
+      "name": "SKS Vet hospital",
+      "distance": "Main Gate: 4.4 kms",
+      "contacts": ["04442108159"],
+      "address": "Shop No.198A, Dev Apartments, basement, St Marys Rd, opp. Luz Church Road, Trustpakkam, Abiramapuram, Chennai, Tamil Nadu 600018",
+      "hours": "24/7 EMERGENCY"
+    },
+    {
+      "name": "Sanchu Animal Hospital (Velachery)",
+      "distance": "Adyar branch: 5.2 km (Main Gate), 1.5 kms (Velachery Gate)",
+      "contacts": ["+918939339388", "078258 81525"],
+      "address": "Door No.44/1, Taramani Link Rd, opp. to Vijayanagar Bus stand, Sarathy Nagar, Velachery, Chennai, Tamil Nadu, 600042",
+      "hours": "24/7 EMERGENCY"
+    }
+  ]
+}
