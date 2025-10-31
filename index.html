@@ -122,14 +122,14 @@
             <hr class="w-1/2 mx-auto my-4 border-t-2 border-theme-golden/30 rounded-full">
 
             <!-- Navigation -->
-            <nav class="mt-6">
-                <ul class="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 md:gap-x-10">
-                    <li><a href="#mission" class="nav-link">Mission</a></li>
-                    <li><a href="#how-to-help" class="nav-link">How to Help</a></li>
-                    <li><a href="#helplines" class="nav-link">Helplines</a></li>
-                    <li><a href="#learn" class="nav-link">Learn</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                </ul>
+            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                <a href="#mission" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">Mission</a>
+                <a href="#how-to-help" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">How to Help</a>
+                <a href="#helplines" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">Helplines</a>
+                <a href="#nearby-clinics" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">Clinics</a>
+                <a href="#vets" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">Vets</a>
+                <a href="#learn" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">Learn</a>
+                <a href="#gallery" class="font-semibold text-theme-dark-text/70 hover:text-theme-golden transition duration-200 px-3 py-1 rounded-md">Gallery</a>
             </nav>
         </div>
     </header>
@@ -172,28 +172,31 @@
                 </div>
             </div>
 
-            <!-- Div 3: Animal Helplines & Nearby Vets -->
-            <div id="helplines" class="content-card p-8 lg:col-span-2">
-                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Helplines & Clinics</h2>
-                <ul class="space-y-4 list-disc list-inside text-lg">
+            <!-- Div 3: Animal Helplines (Static) -->
+            <section id="helplines" class="content-card p-8 lg:col-span-2">
+                <h2 class="text-4xl font-heading font-semibold text-theme-golden mb-6">Emergency Helplines</h2>
+                <ul class="space-y-4 list-disc list-inside text-lg text-theme-dark-text/90">
                     <!-- Template Item 1 -->
                     <li>
-                        <strong>[Helpline Name]:</strong> 
-                        <a href="tel:999-999-9999">[Phone Number]</a>
-                    </li>
-                    <!-- Template Item 2 -->
-                    <li>
-                        <strong>[Nearby Clinic]:</strong> 
-                        <p class="pl-4">[Address, Guindy]</p>
-                        <p class="pl-4"><a href="tel:999-999-9999">[Phone Number]</a></p>
-                    </li>
-                    <!-- Template Item 3 -->
-                    <li>
                         <strong>Blue Cross of India:</strong> 
-                        <a href="tel:044-2235-4959">044-2235 4959</a>
+                        <a href="tel:044-2235-4959" class="font-medium text-theme-golden-hover hover:underline">044-2235 4959</a>
+                    </li>
+                    <!-- Add other static, important helplines here -->
+                    <li>
+                        <strong>[Another Helpline Name]:</strong> 
+                        <a href="tel:999-999-9999" class="font-medium text-theme-golden-hover hover:underline">[Phone Number]</a>
                     </li>
                 </ul>
-            </div>
+            </section>
+
+            <!-- NEW: Nearby Clinics (Dynamic from clinics.json) -->
+            <section id="nearby-clinics" class="content-card p-8 lg:col-span-2">
+                <h2 class="text-4xl font-heading font-semibold text-theme-golden mb-6">Nearby Clinics</h2>
+                <!-- This div will be populated by JavaScript -->
+                <div id="clinics-list" class="space-y-6">
+                    <p class="text-lg text-theme-dark-text/80">Loading nearby clinics list...</p>
+                </div>
+            </section>
 
             <!-- Div 4: Our Vets (Dynamic) -->
             <section id="vets" class="content-card p-8 lg:col-span-2">
@@ -298,6 +301,8 @@
     <!-- JavaScript to load Vets from JSON -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Load Vets by Specialty ---
             const vetsListContainer = document.getElementById('vets-list');
             
             if (vetsListContainer) {
@@ -350,6 +355,60 @@
                     .catch(error => {
                         vetsListContainer.innerHTML = '<p class="text-lg text-red-600">Error: Could not load the veterinarian list. Please try again later.</p>';
                         console.error('Error fetching vet data:', error);
+                    });
+            }
+            
+            // --- Load Nearby Clinics ---
+            const clinicsListContainer = document.getElementById('clinics-list');
+            if (clinicsListContainer) {
+                fetch('clinics.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok for clinics.json');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        clinicsListContainer.innerHTML = ''; // Clear "Loading..." text
+                        
+                        const clinicsGrid = document.createElement('div');
+                        clinicsGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
+
+                        data.clinics.forEach(clinic => {
+                            const clinicCard = document.createElement('div');
+                            clinicCard.className = 'bg-theme-beige/50 p-6 rounded-lg border border-theme-golden/30';
+                            
+                            let cardHTML = `<h3 class="text-2xl font-heading font-semibold text-theme-golden mb-2">${clinic.name}</h3>`;
+                            
+                            if (clinic.distance) {
+                                cardHTML += `<p class="text-md font-semibold text-theme-dark-text/90">${clinic.distance}</p>`;
+                            }
+                            if (clinic.address) {
+                                cardHTML += `<p class="text-md text-theme-dark-text/80 mt-2">${clinic.address}</p>`;
+                            }
+                            if (clinic.contacts && clinic.contacts.length > 0) {
+                                cardHTML += '<div class="mt-3">';
+                                clinic.contacts.forEach(contact => {
+                                    cardHTML += `<a href="tel:${contact}" class="inline-block mr-4 text-lg font-semibold text-theme-golden-hover hover:underline">${contact}</a>`;
+                                });
+                                cardHTML += '</div>';
+                            }
+                            if (clinic.hours) {
+                                // Check for emergency text to style it
+                                const isEmergency = clinic.hours.includes('EMERGENCY');
+                                const hoursClass = isEmergency ? 'emergency-text' : 'text-theme-dark-text/90';
+                                cardHTML += `<p class="text-md ${hoursClass} mt-2">${clinic.hours}</p>`;
+                            }
+
+                            clinicCard.innerHTML = cardHTML;
+                            clinicsGrid.appendChild(clinicCard);
+                        });
+                        
+                        clinicsListContainer.appendChild(clinicsGrid);
+                    })
+                    .catch(error => {
+                        clinicsListContainer.innerHTML = '<p class="text-lg text-red-600">Error: Could not load the nearby clinics list.</p>';
+                        console.error('Error fetching clinic data:', error);
                     });
             }
         });
