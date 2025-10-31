@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Meowdras - Campus Cats</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Google Fonts: Poppins for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Base font style -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Replaced Jute texture with a subtle gradient */
+            background: linear-gradient(170deg, #FFFBEB, #FDF5E6);
+            background-attachment: fixed; /* Makes gradient cover the whole page */
+        }
+
+        /* Set Poppins for all headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Style for all links */
+        a {
+            font-weight: 600; /* semibold */
+            color: #B8860B; /* theme-golden-hover */
+            transition: all 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #fca311; /* theme-golden */
+            text-decoration: none; /* Modern sites often remove underline on hover */
+        }
+        
+        /* Modern Card styles */
+        .content-card {
+            /* background-color: #ffffff; */ /* Replaced with subtle gradient */
+            background-image: linear-gradient(to bottom, #ffffff, #f9fafb); /* white to gray-50 */
+            border-radius: 1rem; /* .rounded-2xl */
+            border-top: 4px solid #fca311; /* Golden top border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-5px); /* Subtle lift effect */
+            box-shadow: 0 10px 20px rgba(252, 163, 17, 0.2); /* Soft golden glow */
+        }
+        
+        /* Gallery Image Hover */
+        .gallery-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+
+        /* Style for new Nav Links */
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem; /* text-base */
+            color: #422D0B; /* theme-dark-text */
+            padding-bottom: 4px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #fca311; /* theme-golden */
+            border-bottom-color: #fca311;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'theme-beige': '#FFFBEB',    /* Main background fallback */
+                        'theme-card-bg': '#FDF5E6', /* Header/Footer background */
+                        'theme-dark-text': '#422D0B',/* Dark brown text */
+                        'theme-golden': '#fca311',   /* Golden ginger yellow */
+                        'theme-golden-hover': '#E69500', /* Darker ginger hover */
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-theme-beige text-theme-dark-text antialiased">
+
+    <!-- Header Section -->
+    <!-- Subtle gradient background for header -->
+    <header class="bg-gradient-to-b from-white to-gray-50 shadow-lg rounded-b-2xl sticky top-0 z-50">
+        <!-- Reduced padding from py-6 to py-4 -->
+        <div class="container max-w-7xl mx-auto px-6 py-4 text-center">
+            
+            <h1 class="text-5xl md:text-6xl font-bold font-heading text-theme-golden" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+                IIT Meowdras
+            </h1>
+
+            <p class="text-lg md:text-xl mt-3 font-sans text-theme-dark-text/90">Campus Animal Welfare Initiative</p>
+
+            <!-- Thin horizontal line added -->
+            <hr class="w-1/2 mx-auto my-4 border-t-2 border-theme-golden/30 rounded-full">
+
+            <!-- Navigation -->
+            <nav class="mt-6">
+                <ul class="flex items-center justify-center flex-wrap gap-x-4 gap-y-2 md:gap-x-10">
+                    <li><a href="#mission" class="nav-link">Mission</a></li>
+                    <li><a href="#how-to-help" class="nav-link">How to Help</a></li>
+                    <li><a href="#helplines" class="nav-link">Helplines</a></li>
+                    <li><a href="#learn" class="nav-link">Learn</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Golden Horizontal Line - Now a gradient -->
+    <div class="w-full h-2 bg-gradient-to-r from-theme-golden-hover via-theme-golden to-theme-golden-hover"></div>
+
+    <!-- Main Content Section -->
+    <!-- Changed to max-w-7xl for a wider layout -->
+    <main class="container max-w-7xl mx-auto px-6 py-16">
+        
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <!-- Div 1: Abstract Section -->
+            <div id="mission" class="content-card p-8 lg:col-span-2">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-4">Our Mission</h2>
+                <p class="text-lg text-theme-dark-text/90 leading-relaxed">
+                    This is the abstract section you can fill. You can write about your group's mission, vision, or a general welcome message. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+
+            <!-- NEW Div: How to Help -->
+            <div id="how-to-help" class="content-card p-8 lg:col-span-2">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-6">How You Can Help</h2>
+                <!-- Updated grid to 2 columns and centered them -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-lg max-w-4xl mx-auto">
+                    <!-- Column 1: Report -->
+                    <div class="text-center md:text-left">
+                        <h3 class="font-semibold text-xl text-theme-dark-text mb-2">Report an Animal</h3>
+                        <p class="text-theme-dark-text/90">See an animal in distress? Contact us or a helpline immediately. Quick action saves lives.</p>
+                    </div>
+                    <!-- Column 2: Volunteer (Updated) -->
+                    <div class="text-center md:text-left">
+                        <h3 class="font-semibold text-xl text-theme-dark-text mb-2">Join FOA</h3>
+                        <p class="text-theme-dark-text/90">IITMeowdras is a forum for info and pics. For hands-on volunteering (feeding, rescues), please join FOA (Friends of Animals), the official campus volunteer team.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div 2: Animal Helplines & Nearby Vets -->
+            <div id="helplines" class="content-card p-8">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Helplines & Clinics</h2>
+                <ul class="space-y-4 list-disc list-inside text-lg">
+                    <!-- Template Item 1 -->
+                    <li>
+                        <strong>[Helpline Name]:</strong> 
+                        <a href="tel:999-999-9999">[Phone Number]</a>
+                    </li>
+                    <!-- Template Item 2 -->
+                    <li>
+                        <strong>[Nearby Clinic]:</strong> 
+                        <p class="pl-4">[Address, Guindy]</p>
+                        <p class="pl-4"><a href="tel:999-999-9999">[Phone Number]</a></p>
+                    </li>
+                    <!-- Template Item 3 -->
+                    <li>
+                        <strong>Blue Cross of India:</strong> 
+                        <a href="tel:044-2235-4959">044-2235 4959</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Div 3: Veterinarian Contacts -->
+            <div class="content-card p-8">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Our Vets</h2>
+                <div class="space-y-5">
+                    <!-- Template Item 1 -->
+                    <div class="border-b border-theme-golden/30 pb-4">
+                        <h3 class="text-2xl font-semibold text-theme-golden">[Dr. Vet's Name]</h3>
+                        <p class="text-lg"><strong>Specialty:</strong> [e.g., Feline Specialist, General]</p>
+                        <p class="text-lg"><strong>Contact:</strong> <a href="tel:999-999-9999">[Phone Number]</a></p>
+                        <p class="text-md mt-1"><strong>Notes:</strong> [e.g., Available 24/7, House calls, etc.]</p>
+                    </div>
+                    <!-- Template Item 2 -->
+                    <div class="border-b border-theme-golden/30 pb-4">
+                        <h3 class="text-2xl font-semibold text-theme-golden">[Another Vet's Name]</h3>
+                        <p class="text-lg"><strong>Specialty:</strong> [e.g., Surgery]</p>
+                        <p class="text-lg"><strong>Contact:</strong> <a href="tel:888-888-8888">[Phone Number]</a></p>
+                        <p class="text-md mt-1"><strong>Notes:</strong> [e.g., Works at [Clinic Name]]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW Div: Common Misconceptions -->
+            <div id="learn" class="content-card p-8 lg:col-span-2">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Common Misconceptions</h2>
+                <div class="space-y-5 text-lg">
+                    <!-- Misconception 1 -->
+                    <div class="border-b border-theme-golden/20 pb-4">
+                        <h3 class="font-semibold text-xl text-theme-dark-text">"Milk is good for cats."</h3>
+                        <p class="text-theme-dark-text/90">Most cats are actually lactose intolerant. Giving them cow's milk can cause digestive upset and diarrhea. Stick to fresh water!</p>
+                    </div>
+                    <!-- Misconception 2 -->
+                    <div class="border-b border-theme-golden/20 pb-4">
+                        <h3 class="font-semibold text-xl text-theme-dark-text">"Cats always land on their feet."</h3>
+                        <p class="text-theme-dark-text/90">While they have a "righting reflex," it doesn't always work, especially from short falls. They can and do get seriously injured from falls.</p>
+                    </div>
+                    <!-- Misconception 3 -->
+                    <div class="">
+                        <h3 class="font-semibold text-xl text-theme-dark-text">"Indoor cats can't get sick."</h3>
+                        <p class="text-theme-dark-text/90">They are much safer, but they can still get airborne germs, parasites from houseflies, or illnesses from vet visits. Regular vaccinations are still important.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div 4: Cat Friendly Foods -->
+            <div class="content-card p-8">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Cat-Friendly Foods</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Safe Foods -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-green-700 mb-3">Safe Foods (Treats)</h3>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li>Cooked Chicken (no skin/bones)</li>
+                            <li>Cooked Fish (no bones)</li>
+                            <li>Cooked Eggs</li>
+                            <li>Small amounts of plain yogurt</li>
+                            <li>Catnip or Cat Grass</li>
+                        </ul>
+                    </div>
+                    <!-- Toxic Foods -->
+                    <div>
+                        <h3 class="text-2xl font-semibold text-red-700 mb-3">TOXIC Foods (Avoid!)</h3>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li>Onions & Garlic</li>
+                            <li>Chocolate</li>
+                            <li>Grapes & Raisins</li>
+                            <li>Alcohol & Caffeine</li>
+                            <li>Milk (most cats are lactose intolerant)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div 5: Cats of IIT Madras -->
+            <div id="gallery" class="content-card p-8">
+                <h2 class="text-3xl font-semibold text-theme-golden mb-6">Cats of IIT Madras</h2>
+                <p class="text-lg mb-4">A small gallery of our beloved campus residents. You can replace these placeholders with real photos.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <!-- Added gallery-img class for hover effect -->
+                    <img src="https://placehold.co/400x400/FDF5E6/fca311?text=Campus+Cat" alt="A campus cat" class="gallery-img rounded-lg shadow-md w-full h-full object-cover aspect-square border-4 border-gray-100">
+                    <img src="https://placehold.co/400x400/FDF5E6/fca311?text=Fluffy" alt="A campus cat" class="gallery-img rounded-lg shadow-md w-full h-full object-cover aspect-square border-4 border-gray-100">
+                    <img src="https://placehold.co/400x400/FDF5E6/fca311?text=Shadow" alt="A campus cat" class="gallery-img rounded-lg shadow-md w-full h-full object-cover aspect-square border-4 border-gray-100">
+                    <img src="https://placehold.co/400x400/FDF5E6/fca311?text=Leo" alt="A campus cat" class="gallery-img rounded-lg shadow-md w-full h-full object-cover aspect-square border-4 border-gray-100">
+                    <img src="httpsDeF5E6/fca311?text=Mochi" alt="A campus cat" class="gallery-img rounded-lg shadow-md w-full h-full object-cover aspect-square border-4 border-gray-100">
+                    <img src="https://placehold.co/400x400/FDF5E6/fca311?text=Simba" alt="A campus cat" class="gallery-img rounded-lg shadow-md w-full h-full object-cover aspect-square border-4 border-gray-100">
+                </div>
+            </div>
+
+        </div> <!-- End of grid -->
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-t from-theme-card-bg to-white/50 mt-16 shadow-inner rounded-t-2xl">
+        <!-- Reduced padding from py-12 to py-8 -->
+        <div class="container max-w-7xl mx-auto px-6 py-8 text-center text-theme-dark-text">
+            
+            <h3 class="text-2xl font-heading font-semibold text-theme-golden mb-4">Reach Out to Us</h3>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-lg">
+                <a href="mailto:iitmeowdras@gmail.com" class="hover:text-theme-golden">iitmeowdras@gmail.com</a>
+                <!-- Replace "#" with your actual Instagram link -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-theme-golden">Official Instagram</a>
+            </div>
+
+            <!-- Thin horizontal line added -->
+            <hr class="w-1/4 mx-auto my-6 border-t border-theme-golden/30 rounded-full">
+
+            <!-- Reduced margin from mt-10 to mt-8 -->
+            <p class="mb-2 text-xl mt-8">🐾</p>
+            <p>&copy; 2025 IIT Meowdras. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
